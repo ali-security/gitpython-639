@@ -20,6 +20,9 @@ jobs:
     - name: Force LF line endings
       run: git config --global core.autocrlf input
 
+    - name: Tell git to trust this directory
+      run: git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639/.git
+
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
