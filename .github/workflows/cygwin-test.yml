@@ -28,6 +28,7 @@ jobs:
         git config --global --add safe.directory *
         git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639
         git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639/.git
+        git config --list --show-origin
 
     - uses: actions/checkout@v4
       with:
@@ -71,7 +72,7 @@ jobs:
     - name: Test with pytest
       run: |
         set -x
-        git config --global safe.directory *
+        git config --global --add safe.directory '*'
         git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639
         git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639/.git
         /usr/bin/git config --global --add safe.directory "$(pwd)"
