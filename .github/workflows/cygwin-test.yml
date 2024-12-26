@@ -27,7 +27,7 @@ jobs:
 
     - uses: cygwin/cygwin-install-action@v4
       with:
-        packages: python39 python39-pip python39-virtualenv git=2.43.0-1
+        packages: python39 python39-pip python39-virtualenv git
 
     - name: Show python and git versions
       run: |
@@ -37,7 +37,6 @@ jobs:
     - name: Tell git to trust this repo
       run: |
         /usr/bin/git config --global --add safe.directory "$(pwd)"
-        /usr/bin/git config --global --add safe.directory "$(pwd)/.git"
 
     - name: Prepare this repo for tests
       run: |
