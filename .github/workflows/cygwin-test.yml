@@ -20,16 +20,6 @@ jobs:
     - name: Force LF line endings
       run: git config --global core.autocrlf input
 
-    - name: Create tmp using bash
-      run: bash -c 'mkdir /tmp'
-
-    - name: Tell git to trust this directory
-      run: |
-        git config --global --add safe.directory *
-        git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639
-        git config --global --add safe.directory /cygdrive/d/a/gitpython-639/gitpython-639/.git
-        git config --list --show-origin
-
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
